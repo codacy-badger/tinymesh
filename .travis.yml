@@ -7,11 +7,8 @@ compiler:
 
 before_install:
   # Compiler
-  - g++ --version
-  - clang++ --version
-  - g++-9 --version
-  - clang++-10 --version
-
+  - if [ $CC == "gcc" ]; then export CC=gcc-9 && CXX=g++-9; fi
+  - if [ $CC == "clang" ]; then export CC=clang-10 && CXX=clang++10; fi
   # Eigen
   - sudo apt-get install libeigen3-dev
   # Google Test
@@ -36,7 +33,7 @@ before_install:
 install:
   # C/C++
   - mkdir build && cd build
-  - cmake -D BUILD_EXAMPLE=ON -D BUILD_TESTS=ON .. 
+  - cmake -DBUILD_EXAMPLE=ON -DBUILD_TESTS=ON .. 
   - cmake --build . --parallel 4
   - cd -
   # Python
