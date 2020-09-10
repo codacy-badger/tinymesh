@@ -31,14 +31,13 @@ install:
   - mkdir build && cd build
   - cmake -D BUILD_EXAMPLE=ON -D BUILD_TESTS=ON .. 
   - cmake --build . --parallel 4
+  - cd -
   # Python
   - python setup.py build_ext -i
 
 script:
   # C/C++
-  - ctest . --output-on-failure
-  # Python
-  - python -c "import tinymesh"
+  - ctest ./build --output-on-failure
   - nosetests .
 
 branches:

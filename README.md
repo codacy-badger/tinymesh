@@ -55,6 +55,12 @@ By the following shell command, you can build the module, which will be placed o
 $ python setup.py build_ext -i
 ```
 
+Also, you can pass the CMake build arguments to `setup.py`.
+
+```shell
+$ python setup.py build_ext -i --cmake-build-args "-DEIGEN3_INCLUDE_DIR=[Your Eigen3 Location]"
+```
+
 Otherwise, you can build the module also using `CMake`.
 
 ```shell
