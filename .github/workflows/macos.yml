@@ -26,6 +26,11 @@ jobs:
       with:
         submodules: true
     
+    - name: Set up Python version
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.6
+
     - name: Install GNU C/C++ Compiler
       if: ${{ matrix.compiler == 'gcc' }}
       run: |

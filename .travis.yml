@@ -5,6 +5,10 @@ compiler:
 
 before_install:
   - sudo apt-get install libeigen3-dev
+  - git clone https://github.com/google/googletest.git
+  - mkdir -p googletest/build && cd googletest/build
+  - cmake -D CMAKE_BUILD_TYPE=Release ..
+  - cmake --build . --parallel 4 --target install
 
 install:
   - mkdir build && cd build
