@@ -8,7 +8,7 @@ compiler:
 before_install:
   # Compiler
   - if [ $CC == "gcc" ]; then export CC=gcc-9 && CXX=g++-9; fi
-  - if [ $CC == "clang" ]; then export CC=clang-10 && CXX=clang++10; fi
+  - if [ $CC == "clang" ]; then export CC=clang-10 && CXX=clang++-10; fi
   # Eigen
   - sudo apt-get install libeigen3-dev
   # Google Test
