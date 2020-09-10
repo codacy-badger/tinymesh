@@ -6,6 +6,12 @@ compiler:
   - clang
 
 before_install:
+  # Compiler
+  - g++ --version
+  - clang++ --version
+  - g++-9 --version
+  - clang++-10 --version
+
   # Eigen
   - sudo apt-get install libeigen3-dev
   # Google Test
@@ -26,6 +32,7 @@ before_install:
   - conda create -q -n tinymesh python=$TRAVIS_PYTHON_VERSION numpy nose matplotlib
   - conda activate tinymesh
   - conda install -c conda-forge plyfile
+
 install:
   # C/C++
   - mkdir build && cd build
@@ -44,6 +51,16 @@ branches:
   only:
     - master
     - dev
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchan-bionic-10
+    packages:
+      - gcc-9
+      - g++-9
+      - clang-10
 
 env:
   matrix:
