@@ -1,6 +1,7 @@
 TinyMesh
 ===
 
+[![Build Status](https://travis-ci.com/tatsy/tinymesh.svg?branch=master)](https://travis-ci.com/tatsy/tinymesh)
 ![Windows CI](https://github.com/tatsy/tinymesh/workflows/Windows%20CI/badge.svg)
 ![MacOS CI](https://github.com/tatsy/tinymesh/workflows/MacOS%20CI/badge.svg)
 ![Ubuntu CI](https://github.com/tatsy/tinymesh/workflows/Ubuntu%20CI/badge.svg)
