@@ -41,7 +41,7 @@ install:
 
 script:
   # C/C++
-  - ctest ./build --output-on-failure
+  - make -C ./build check
   - nosetests .
 
 branches:
