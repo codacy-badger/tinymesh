@@ -61,3 +61,11 @@ jobs:
       working-directory: ${{ runner.workspace }}/build
       shell: bash
       run: ctest -C $BUILD_TYPE
+
+    - name: Python Module Build
+      run: |
+        python setup.py build_ext -i --cmake-build-args="-DEIGEN3_INCLUDE_DIR=C:/Program Files/Eigen/include/eigen3"
+
+    - name: Python Module Test
+      run: |
+        python -c "import tinymesh"
