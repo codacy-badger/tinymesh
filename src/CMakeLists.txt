@@ -9,7 +9,7 @@ if (BUILD_PYTHON_MODULE)
     include_directories(${CMAKE_CURRENT_LIST_DIR}/tinymesh/ext/pybind11)
     add_subdirectory(tinymesh/ext/pybind11)
 
-    add_library(${TINYMESH_PYTHON_MODULE} pybind11.cpp)
+    add_library(${TINYMESH_PYTHON_MODULE} SHARED pybind11.cpp)
     target_link_libraries(${TINYMESH_PYTHON_MODULE} PRIVATE pybind11::module ${TINYMESH_LIBRARY})
     set_target_properties(${TINYMESH_PYTHON_MODULE} PROPERTIES
                           PREFIX "${PYTHON_MODULE_PREFIX}"
