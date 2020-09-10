@@ -27,6 +27,14 @@ Here is the list of modules and reference papers for that.
 
 ### Dependency
 
+The module is tested its compilation using the following compilers.
+
+* **Windows** - Visual Studio 2019
+* **MacOS** - Apple Clang 11.0 (MacOS 10.15)
+* **Linux** - LLVM Clang 10.0, GNU C Compiler 9.3.0
+
+Also, the module depends on Eigen for the linear algebra.
+
 * [Eigen 3.x](http://eigen.tuxfamily.org/index.php)
 
 ### C++ Library and Examples
@@ -41,6 +49,7 @@ $ mkdir build && cd build
 $ cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=ON ..
 $ cmake --build . --config Release --parallel 2
 ```
+
 #### Run examples
 
 ```shell
